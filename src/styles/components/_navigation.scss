@@ -1,0 +1,19 @@
+$color-1: #FF6060;
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    height: 68px;
+    ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+        li {
+            margin: 10px;
+            color: $color-1;
+        }
+    }
+    .clicked {
+        border-bottom: $color-1;
+    }
+}
