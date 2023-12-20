@@ -1,15 +1,16 @@
 import React from "react";
 import Navigation from "../components/Navigation";
-import Location from "../components/Location";
+import Card from "../components/Card";
+import Banner from "../components/Banner";
 
 const Home = () => {
   return (
     <div>
       <Navigation />
-      <h1>Accueil</h1>
+      <Banner />
       <ul>
         <li>
-          <Location />
+          <Card />
         </li>
       </ul>
     </div>

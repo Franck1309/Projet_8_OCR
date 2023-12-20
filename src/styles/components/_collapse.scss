@@ -1,0 +1,36 @@
+$color-1: #FF6060;
+
+.divCollapse {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 70%;
+    .collapse {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%; 
+        margin-top: 40px;
+        margin-bottom: -20px;
+        background-color: $color-1;  
+        border-radius: 5px;
+        h2 {
+            margin-left: 20px;
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+        }
+        i {
+            margin-top: 30px;
+            margin-right: 20px;
+        }
+    } 
+    .text {
+        display: block;
+        padding: 20px;
+        background-color: #F6F6F6;
+        color: $color-1;
+        font-family: 'Montserrat', sans-serif;
+        line-height: 25px;
+    }
+
+}

@@ -1,11 +1,15 @@
 import React from 'react';
 import Navigation from '../components/Navigation';
+import Banner from '../components/Banner';
+import Collapse from '../components/Collapse';
+
 
 const About = () => {
     return (
         <div>
             <Navigation />
-            <h1>About</h1>
+            <Banner />
+            <Collapse />
         </div>
     );
 };
