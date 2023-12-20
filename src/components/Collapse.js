@@ -47,15 +47,9 @@ const Collapse = () => {
               onClick={() => handleClick(index)}
             ></i>
           </div>
-          {selectedChevrons.includes(index) ? (
-            <p
-              className={`text ${
-                selectedChevrons.includes(index) ? "show" : ""
-              }`}
-            >
-              {info.text}
-            </p>
-          ) : null}
+          <div className={`text ${selectedChevrons.includes(index) ? "show" : ""}`}   >
+             <div className="text-content"> {info.text}</div>
+          </div>
         </div>
       ))}
     </div>

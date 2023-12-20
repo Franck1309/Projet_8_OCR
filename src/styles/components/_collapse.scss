@@ -38,11 +38,12 @@ $color-1: #FF6060;
         justify-content: space-between;
         width: 100%; 
         margin-top: 40px;
-        margin-bottom: -20px;
+        margin-bottom: -3px;
         background-color: $color-1;  
         border-radius: 5px;
         h2 {
             margin-left: 20px;
+            margin-bottom: 15px;
             color: white;
             font-family: 'Montserrat', sans-serif;
         }
@@ -54,20 +55,28 @@ $color-1: #FF6060;
         .rotate {
             transform: rotate(-180deg);
             margin-bottom: 30px;
-            transition: transform 350ms ease-in-out ;
+             transition: transform 350ms ease-in-out ;
         }
     } 
+
     .text {
         background-color: #F6F6F6;
         color: $color-1;    
         font-family: 'Montserrat', sans-serif;
-        padding: 20px;
-        line-height: 25px;
-        // animation: slidedown 250ms forwards;
+        max-height: 0;
+        transition: max-height 1s ease;
+        transition-delay: 0s;
+        overflow: hidden;
+        background: #d5d5d5;
     }
-    // .show {
-        
-    // }
+    
+    .show {
+        max-height: 500px;;
+        transition: max-height 1s ease-in 0s;
+    }
+    .text-content{
+        padding: 20px 0px;
+    }
     
 }
 
