@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Collapse = () => {
   const dataCollapse = [
@@ -20,15 +20,42 @@ const Collapse = () => {
     },
   ];
 
+  const [selectedChevrons, setSelectedChevrons] = useState([]);
+
+  const handleClick = (index) => {
+    const isSelected = selectedChevrons.includes(index);
+
+    if (isSelected) {
+      setSelectedChevrons(
+        selectedChevrons.filter((selectedIndex) => selectedIndex !== index)
+      );
+    } else {
+      setSelectedChevrons([...selectedChevrons, index]);
+    }
+  };
+
   return (
     <div>
-      {dataCollapse.map((info) => (
+      {dataCollapse.map((info, index) => (
         <div key={info.title} className="divCollapse">
           <div className="collapse">
             <h2>{info.title}</h2>
-            <i class="fa-solid fa-chevron-up fa-2xl" style={{color: "white"}}></i>
+            <i
+              className={`fa-solid fa-chevron-up fa-2xl ${
+                selectedChevrons.includes(index) ? "rotate" : ""
+              }`}
+              onClick={() => handleClick(index)}
+            ></i>
           </div>
-          <p className="text">{info.text}</p>
+          {selectedChevrons.includes(index) ? (
+            <p
+              className={`text ${
+                selectedChevrons.includes(index) ? "show" : ""
+              }`}
+            >
+              {info.text}
+            </p>
+          ) : null}
         </div>
       ))}
     </div>
