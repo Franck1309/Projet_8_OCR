@@ -21,10 +21,8 @@ const Collapse = () => {
   ];
 
   const [selectedChevrons, setSelectedChevrons] = useState([]);
-
   const handleClick = (index) => {
     const isSelected = selectedChevrons.includes(index);
-
     if (isSelected) {
       setSelectedChevrons(
         selectedChevrons.filter((selectedIndex) => selectedIndex !== index)
