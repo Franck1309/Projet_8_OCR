@@ -1,0 +1,39 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    color: $color-1;
+    width: 95%;
+    margin: auto;
+    justify-content: space-between;
+    font-family: 'Montserrat', sans-serif;
+    .infosLocation {       
+        h1 {
+            margin-bottom: 0px;
+        }
+        p {
+            margin-top: 0px;
+        }
+        .tags {
+            width: 25%;
+            text-align: center;
+            background-color: $color-1;
+            border-radius: 30px;
+            color: white;
+        }
+    }
+    .infosProprio {
+        display: flex;
+        flex-direction: row;
+        .name {
+         line-height: 25px;
+        }
+        .circle {
+            background-color: #d6d3d3;
+            width: 60px;
+            height: 60px;
+            border-radius: 100px;
+            margin-top: 10px;
+            margin-left: 10px;
+        }
+    }
+}

@@ -21,7 +21,7 @@ const Card = () => {
       {dataArticles.map((article) => (
         <div className="card" key={article.id}>
           <p className="title">{article.title}</p>
-          <NavLink to="/locationChoice">
+          <NavLink to={`/locationChoice/${article.id}`} key={article.id}>
             <img src={article.cover} alt={article.title} />
           </NavLink>
         </div>

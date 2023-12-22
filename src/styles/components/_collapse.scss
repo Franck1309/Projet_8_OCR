@@ -1,14 +1,14 @@
 
-.divCollapse {
-    margin: auto;
-    width: 70%;
+.containerCollapse {
+    margin-bottom: 30px;
+    .divCollapse {
+        width: 80%;
+        margin: auto;
     .collapse {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        width: 100%; 
-        margin-top: 40px;
-        margin-bottom: -3px;
+        width: 100%;     
         background-color: $color-1;  
         border-radius: 5px;
         h2 {
@@ -45,4 +45,7 @@
         transition: max-height 1s ease-in;
     }
 }
+}
+
+
 
