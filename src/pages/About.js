@@ -5,9 +5,9 @@ import Collapse from "../components/Collapse";
 import axios from "axios";
 
 const About = () => {
-  //  DATA POUR LE COLLAPSE
 
   const [dataAbout, setDataAbout] = useState([]);
+  
   const getDataAbout = () => {
     axios
       .get("http://localhost:3004/aboutData")

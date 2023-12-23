@@ -1,23 +1,24 @@
 import React, { useState } from "react";
-
+  // props children qui correspond aux images dans le carrousel
 const Caroussel = ({ children }) => {
+  // j'enregistre l'état du slide affiché 
   const [currentSlide, setCurrentSlide] = useState(0);
-
+  // fonction boolean qui envoie +1 à ma state ou met la state à 0 si c'est ma derniere image 
   const nextSlide = () => {
-    setCurrentSlide((prevSlide) => (prevSlide === children.length - 1 ? 0 : prevSlide + 1));
+    setCurrentSlide((slide) => (slide === children.length - 1 ? 0 : slide + 1));
   };
-
+  // fonction boolean qui envoie -1 à ma state ou met la state à la derniere image si je suis à ma premiere image
   const prevSlide = () => {
-    setCurrentSlide((prevSlide) => (prevSlide === 0 ? children.length - 1 : prevSlide - 1));
+    setCurrentSlide((slide) => (slide === 0 ? children.length - 1 : slide - 1));
   };
 
   return (
-    <div className="carousel">
+    <div className="caroussel">
       <button onClick={prevSlide} className="carousel-button left-chevron">&#8249;</button>
-      <div className="carousel-inner" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
-        {children.map((child, index) => (
-          <div key={index} className="carousel-item">
-            {child}
+      <div className="in-caroussel" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
+        {children.map((image, index) => (
+          <div key={index} className="container-images">
+            {image}
           </div>
         ))}
       </div>

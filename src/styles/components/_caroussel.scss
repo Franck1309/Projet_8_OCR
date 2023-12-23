@@ -1,4 +1,4 @@
-.carousel {
+.caroussel {
     position: relative;
     width: 95%;
     overflow: hidden;
@@ -6,12 +6,12 @@
     border-radius: 25px;
     margin-top: 40px;
     margin-bottom: 40px;
-    .carousel-inner {
+    .in-caroussel {
       display: flex;
       transition: transform 0.5s ease-in-out;
       height: 40vh;
-  
-      .carousel-item {
+      
+      .container-images {
         flex: 0 0 auto;
         width: 100%;
         height: 100%;

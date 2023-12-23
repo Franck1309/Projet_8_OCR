@@ -1,22 +1,42 @@
 import React from "react";
+// props info qui correspond à la data de chaque article
+const InfoLocation = ({ info }) => {
+  // fonction qui affiche des symboles étoile
+  // prend en argument la note
+  const renderStars = (rating) => {
+    const stars = [];
+    // boucle for pour créer les 5 étoiles
+    for (let i = 1; i <= 5; i++) {
+      // Si index d'étoiles est inferieur ou égale à la note alors j'ajoute étoile pleine sinon étoile vide
+      const starClass = i <= rating ? "fas fa-star" : "far fa-star";
+      stars.push(<i key={i} className={`${starClass}`} />);
+    }
+    return stars;
+  };
 
-const InfoLocation = () => {
   return (
     <div className="container">
       <div className="infosLocation">
-        <h1>Nom de la location</h1>
-        <p>Lieu</p>
-        <div className="tags">tags</div>
+        <h1>{info.title}</h1>
+        <p>{info.location}</p>
+        <div className="tags">
+          {info.tags.map((tag, index) => (
+            <span key={index} className="tag">
+              {tag}
+            </span>
+          ))}
+        </div>
       </div>
       <div>
         <div className="infosProprio">
-          <p className="name">
-            Nom <br />
-            Prénom
-          </p>
-          <div className="circle"></div>
+          <p className="name">{info.host.name}</p>
+          <img
+            src={info.host.picture}
+            alt="photo propriétaire"
+            className="circle"
+          />
         </div>
-        <div className="rating">rating</div>
+        {renderStars(parseInt(info.rating))}
       </div>
     </div>
   );

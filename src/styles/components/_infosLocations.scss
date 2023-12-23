@@ -14,11 +14,16 @@
             margin-top: 0px;
         }
         .tags {
-            width: 25%;
+            display: flex;
+            flex-direction: row;
             text-align: center;
-            background-color: $color-1;
-            border-radius: 30px;
             color: white;
+            .tag {
+                background-color: $color-1;
+                border-radius: 30px;
+                padding: 5px;
+                margin: 5px;
+            }
         }
     }
     .infosProprio {
@@ -29,6 +34,7 @@
         }
         .circle {
             background-color: #d6d3d3;
+            object-fit: cover;
             width: 60px;
             height: 60px;
             border-radius: 100px;
@@ -36,4 +42,13 @@
             margin-left: 10px;
         }
     }
+        i {
+            margin-right: 4px;
+             .star-filled {
+            color: $color-1; 
+        }
+        
+        }
 }
+
+
