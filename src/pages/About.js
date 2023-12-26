@@ -3,6 +3,7 @@ import Navigation from "../components/Navigation";
 import Banner from "../components/Banner";
 import Collapse from "../components/Collapse";
 import axios from "axios";
+import Footer from "../components/Footer";
 
 const About = () => {
 
@@ -24,9 +25,10 @@ const About = () => {
     <div>
       <Navigation />
       <Banner />
-      {dataAbout.map((article) => (
-        <Collapse key={article.title} article={article} />
+      {dataAbout.map((article , index) => (
+        <Collapse key={index} title={article.title} text={article.text} />
       ))}
+      <Footer />
     </div>
   );
 };

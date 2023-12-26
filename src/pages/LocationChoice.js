@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useLayoutEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import Caroussel from "../components/Caroussel";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import InfoLocation from "../components/InfoLocation";
+import Collapse from "../components/Collapse";
 
 const LocationChoice = () => {
   const [selectedArticle, setSelectedArticle] = useState();
@@ -30,19 +31,34 @@ const LocationChoice = () => {
       <Navigation />
 
       {selectedArticle && (
-        <>
+        <div>
           <Caroussel>
             {selectedArticle.pictures.map((picture, index) => (
-              <img
-                key={`${selectedArticle.id}-${index}`}
-                src={picture}
-                alt={selectedArticle.title}
-              />
+              <img key={index} src={picture} alt="Photos du lieu" />
             ))}
           </Caroussel>
 
           <InfoLocation info={selectedArticle} />
-        </>
+
+          <div>
+            <Collapse
+              article={selectedArticle}
+              title="Description"
+              text={selectedArticle.description}
+            />
+            <Collapse
+              article={selectedArticle}
+              title="Équipements"
+              text={
+                <ul>
+                  {selectedArticle.equipments.map((equipment, index) => (
+                    <li key={index}>{equipment}</li>
+                  ))}
+                </ul>
+              }
+            />
+          </div>
+        </div>
       )}
 
       <Footer />

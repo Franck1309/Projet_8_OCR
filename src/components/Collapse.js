@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-  // passe en props "article" 
-const Collapse = ({ article }) => {
+  // passe en props le contenu du collapse soit "text" et "title" 
+const Collapse = ({ text , title}) => {
   // useState enregistre les index de chevrons séléctionné dans un tableau
   const [selectedChevrons, setSelectedChevrons] = useState([]);
-
   // Fonction qui sera appelé au click d'un chevron
   const chevronClicked = (index) => {
   // enregistre dans le state l'index du chevron cliqué
@@ -16,13 +15,13 @@ const Collapse = ({ article }) => {
     } else {
       setSelectedChevrons([...selectedChevrons, index]);
     }
-  };
-
+  }; 
+  
   return (
     <div className="containerCollapse">
       <div className="divCollapse">
         <div className="collapse">
-          <h2>{article.title}</h2>
+          <h2>{title}</h2>
           <i
             className={`fa-solid fa-chevron-up fa-2xl ${
               selectedChevrons.includes(1) ? "rotate" : ""
@@ -31,7 +30,7 @@ const Collapse = ({ article }) => {
           ></i>
         </div>
         <div className={`text ${selectedChevrons.includes(1) ? "show" : ""}`}>
-          <div className="text-content">{article.text}</div>
+          <div className="text-content">{text}</div>
         </div>
       </div>
     </div>
