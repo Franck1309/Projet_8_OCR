@@ -1,14 +1,14 @@
-
 .containerCollapse {
-    margin-bottom: 30px;
+   
     .divCollapse {
-        width: 80%;
+        width: 100%;
         margin: auto;
     .collapse {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         width: 100%;     
+        margin: auto;
         background-color: $color-1;  
         border-radius: 5px;
         h2 {
@@ -33,8 +33,7 @@
         color: $color-1;    
         font-family: 'Montserrat', sans-serif;
         max-height: 0;
-        transition: max-height 1s ease;
-        transition-delay: 0s;
+        transition:  1s ;
         overflow: hidden;
         .text-content{
         padding: 20px;

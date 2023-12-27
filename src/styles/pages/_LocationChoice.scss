@@ -1,0 +1,12 @@
+.collapseLocationChoice {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 95%;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    .containerCollapse {
+        width: 47%;
+    }
+}

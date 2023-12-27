@@ -21,17 +21,17 @@
             .tag {
                 background-color: $color-1;
                 border-radius: 30px;
-                padding: 5px;
-                margin: 5px;
+                padding: 5px 15px ;
+                margin-right: 5px;
             }
         }
     }
-    .infosProprio {
+
+    .divProprio {
+        width: 15%;
+       .infosProprio {
         display: flex;
         flex-direction: row;
-        .name {
-         line-height: 25px;
-        }
         .circle {
             background-color: #d6d3d3;
             object-fit: cover;
@@ -42,11 +42,20 @@
             margin-left: 10px;
         }
     }
-        i {
+    .divRating {
+        margin: auto;
+        margin-left: 35px;
+        width: 80%;
+        margin-top: 15px;
+        
+    }
+    i {
             margin-right: 4px;
              .star-filled {
             color: $color-1; 
         }
         
-        }
+    } 
+    }
+    
 }

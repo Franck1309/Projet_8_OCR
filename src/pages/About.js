@@ -6,9 +6,8 @@ import axios from "axios";
 import Footer from "../components/Footer";
 
 const About = () => {
-
   const [dataAbout, setDataAbout] = useState([]);
-  
+
   const getDataAbout = () => {
     axios
       .get("http://localhost:3004/aboutData")
@@ -25,9 +24,12 @@ const About = () => {
     <div>
       <Navigation />
       <Banner />
-      {dataAbout.map((article , index) => (
-        <Collapse key={index} title={article.title} text={article.text} />
-      ))}
+      <div className="collapseAbout">
+        {dataAbout.map((article, index) => (
+          <Collapse key={index} title={article.title} text={article.text} />
+        ))}
+      </div>
+
       <Footer />
     </div>
   );
