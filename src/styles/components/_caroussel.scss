@@ -6,17 +6,19 @@
     border-radius: 25px;
     margin-top: 40px;
     margin-bottom: 40px;
+    @media (max-width: 500px){
+      width: 90%;
+      height: 255px;
+    }
     .in-caroussel {
       display: flex;
       transition: transform 0.5s ease-in-out;
-      height: 40vh;
-      
+      height: 40vh; 
       .container-images {
         flex: 0 0 auto;
         width: 100%;
         height: 100%;
         display: flex;
-        
         img {
         object-fit: cover;
           width: 100%;
@@ -24,7 +26,6 @@
         }
       }
     }
-  
     .carousel-button {
       position: absolute;
       top: 50%;
@@ -35,22 +36,19 @@
       cursor: pointer;
       color: white; 
     }
-  
     .left-chevron {
       left: 10px;
       z-index: 1;
     }
-  
     .right-chevron {
       right: 10px;
     }
-  
-    @media (max-width: 768px) {
-      .carousel-inner {
-        .carousel-item {
-          width: 100%;
-        }
-      }
+    .numberSlide {
+      position: absolute;
+      top: 85%;
+      left: 48%;
+      font-size: 20px;
+      color: white;
     }
   }
   

@@ -2,25 +2,41 @@
     display: flex;
     justify-content: space-between;
     height: 68px;
-    width: 96%;
+    width: 90%;
     margin: auto;
     margin-top: 30px;
+
+    img {
+      object-fit: cover;
+      height: 68px;
+    }
 
     ul {
       display: flex;
       flex-direction: row;
-      justify-content: flex-end;
-      
-      li {
-        margin: 10px;
-  
+      justify-content: flex-end;      
         a {
+          margin-left: 30px;
           color: $color-1;
+          font-size: 25px;
         }
-      }
     }
-
     a.active {
         border-bottom: 2px solid $color-1;
       }
+      @media (max-width: 500px){
+          height: 47px;
+          width: 85%;
+          img {
+            height: 47px;
+          }
+          ul {
+              a {
+                margin-left: 10px;
+                font-size: 15px;
+          }
+          }
+      }
   }
+
+      

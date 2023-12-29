@@ -5,10 +5,16 @@
     width: 95%;
     margin: auto;
     justify-content: space-between;
-    font-family: 'Montserrat', sans-serif;
-    .infosLocation {       
+    font-family: 'Montserrat', sans-serif; 
+    @media (max-width: 500px) {
+        width: 90%;
+        flex-direction: column;
+    }
+    .infosLocation {    
+        flex-direction: column;
         h1 {
-            margin-bottom: 0px;
+            margin-top: 0px;
+            margin-bottom: 10px;
         }
         p {
             margin-top: 0px;
@@ -18,20 +24,33 @@
             flex-direction: row;
             text-align: center;
             color: white;
+            margin-bottom: 20px;
             .tag {
                 background-color: $color-1;
-                border-radius: 30px;
+                border-radius: 10px;
                 padding: 5px 15px ;
                 margin-right: 5px;
+                @media (max-width: 500px) {
+                   padding: 5px;
+                   margin: auto;
+                }
             }
         }
     }
-
     .divProprio {
-        width: 15%;
+        display: flex;
+        flex-direction: column;
+        width: auto;
+        @media (max-width: 500px) {
+            flex-direction: row-reverse;
+        }
        .infosProprio {
         display: flex;
         flex-direction: row;
+        .nomProprio {
+            width: 80px;
+            text-align:right;
+        }
         .circle {
             background-color: #d6d3d3;
             object-fit: cover;
@@ -47,7 +66,10 @@
         margin-left: 35px;
         width: 80%;
         margin-top: 15px;
-        
+        @media (max-width: 500px) {
+            margin-left: 5px;
+            margin-top: 30px;
+        }
     }
     i {
             margin-right: 4px;
@@ -57,5 +79,4 @@
         
     } 
     }
-    
 }

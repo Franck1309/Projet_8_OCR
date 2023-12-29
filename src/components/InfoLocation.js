@@ -29,16 +29,14 @@ const InfoLocation = ({ info }) => {
       </div>
       <div className="divProprio">
         <div className="infosProprio">
-          <p>{info.host.name}</p>
+          <p className="nomProprio">{info.host.name}</p>
           <img
             src={info.host.picture}
             alt="photo propriétaire"
             className="circle"
           />
         </div>
-        <div className="divRating">
-          {renderStars(parseInt(info.rating))}
-        </div>
+        <div className="divRating">{renderStars(parseInt(info.rating))}</div>
       </div>
     </div>
   );

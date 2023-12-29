@@ -12,6 +12,12 @@ const Caroussel = ({ children }) => {
     setCurrentSlide((slide) => (slide === 0 ? children.length - 1 : slide - 1));
   };
 
+  const [spanVisibility, setSpanvisibility] = useState(true)
+
+  if (children.length === 0 ){
+    setSpanvisibility(false)
+  }
+
   return (
     <div className="caroussel">
       <button onClick={prevSlide} className="carousel-button left-chevron">&#8249;</button>
@@ -22,6 +28,9 @@ const Caroussel = ({ children }) => {
           </div>
         ))}
       </div>
+      {children.length > 1 && ( 
+        <span className="numberSlide">{currentSlide +1}/{children.length}</span>
+      )}
       <button onClick={nextSlide} className="carousel-button right-chevron">&#8250;</button>
     </div>
   );

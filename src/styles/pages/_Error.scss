@@ -1,0 +1,33 @@
+.divError {
+   display: flex;
+   flex-direction: column;
+   width: 60%;
+   margin: auto;
+   text-align: center;
+   margin-bottom: 100px;
+   gap: 50px;
+   margin-top: 160px;
+   p {
+    color: $color-1;
+    font-size: 30px;
+   }  
+   a {
+    color: $color-1;
+    text-decoration: underline;
+   }
+   img {
+    width: 30%;
+    margin: auto;
+    object-fit: cover;
+   }
+}
+
+@media (max-width: 768px) {
+    .divError{
+        width: 80%;
+        img {
+            height: 70px;
+            width: 55%;
+        }
+    }
+}

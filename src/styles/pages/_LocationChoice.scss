@@ -6,7 +6,17 @@
     margin: auto;
     margin-top: 20px;
     margin-bottom: 30px;
+
+    @media (max-width: 500px){
+        flex-direction: column;
+    }
     .containerCollapse {
         width: 47%;
+        
+        @media (max-width: 500px){   
+            margin: auto;
+            width: 95%; 
+        }
     }
+    
 }
