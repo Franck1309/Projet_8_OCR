@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import Caroussel from "../components/Caroussel";
@@ -18,6 +18,7 @@ const LocationChoice = () => {
         setSelectedArticle(res.data);
       })
       .catch((error) => {
+        window.location.replace("/error");
         console.error(error);
       });
   };
@@ -27,7 +28,7 @@ const LocationChoice = () => {
   }, [articleId]);
 
   return (
-    <div>
+    <div className="main-content-location">
       <Navigation />
 
       {selectedArticle && (
@@ -41,30 +42,26 @@ const LocationChoice = () => {
           <InfoLocation info={selectedArticle} />
 
           <div className="collapseLocationChoice">
-            
-              <Collapse
-                article={selectedArticle}
-                title="Description"
-                text={selectedArticle.description}
-              />
-       
-          
-              <Collapse
-                article={selectedArticle}
-                title="Équipements"
-                text={
-                  <ul>
-                    {selectedArticle.equipments.map((equipment, index) => (
-                      <li key={index}>{equipment}</li>
-                    ))}
-                  </ul>
-                }
-              />
-            
+            <Collapse
+              article={selectedArticle}
+              title="Description"
+              text={selectedArticle.description}
+            />
+
+            <Collapse
+              article={selectedArticle}
+              title="Équipements"
+              text={
+                <ul>
+                  {selectedArticle.equipments.map((equipment, index) => (
+                    <li key={index}>{equipment}</li>
+                  ))}
+                </ul>
+              }
+            />
           </div>
         </div>
       )}
-
       <Footer />
     </div>
   );

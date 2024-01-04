@@ -12,15 +12,17 @@ const Caroussel = ({ children }) => {
     setCurrentSlide((slide) => (slide === 0 ? children.length - 1 : slide - 1));
   };
 
-  const [spanVisibility, setSpanvisibility] = useState(true)
-
   if (children.length === 0 ){
-    setSpanvisibility(false)
+    return null
   }
+
+  const showButtons = children.length > 1;
 
   return (
     <div className="caroussel">
-      <button onClick={prevSlide} className="carousel-button left-chevron">&#8249;</button>
+      {showButtons && (
+        <button onClick={prevSlide} className="carousel-button left-chevron">&#8249;</button>
+      )}
       <div className="in-caroussel" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
         {children.map((image, index) => (
           <div key={index} className="container-images">
@@ -28,10 +30,12 @@ const Caroussel = ({ children }) => {
           </div>
         ))}
       </div>
-      {children.length > 1 && ( 
+      {showButtons && ( 
         <span className="numberSlide">{currentSlide +1}/{children.length}</span>
       )}
-      <button onClick={nextSlide} className="carousel-button right-chevron">&#8250;</button>
+      {showButtons && (
+        <button onClick={nextSlide} className="carousel-button right-chevron">&#8250;</button>
+      )}
     </div>
   );
 };

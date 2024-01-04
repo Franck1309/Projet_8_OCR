@@ -1,4 +1,5 @@
-.collapseLocationChoice {
+.main-content-location {
+    .collapseLocationChoice {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -19,4 +20,14 @@
         }
     }
     
+    }
+    .footer {
+        @media (min-height: 896px){
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+    }
 }
+
+

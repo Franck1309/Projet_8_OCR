@@ -1,8 +1,20 @@
-.collapseAbout {
-    width: 75%;
-    margin: auto;
-    margin-bottom: 30px;
-    .divCollapse {
-     margin-bottom: 30px;
+.main-content-about {
+    .collapseAbout {
+        width: 75%;
+        margin: auto;
+        margin-bottom: 30px;
+        .divCollapse {
+            margin-bottom: 30px;
+        }
+    }
+    .footer {
+        @media (min-height: 896px){
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
     }
 }
+
+
+

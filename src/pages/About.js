@@ -21,7 +21,7 @@ const About = () => {
   }, []);
 
   return (
-    <div>
+    <div className="main-content-about">
       <Navigation />
       <Banner />
       <div className="collapseAbout">
