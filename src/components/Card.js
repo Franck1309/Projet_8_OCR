@@ -19,7 +19,7 @@ const Card = () => {
 
 // j'appel getData une seule fois quand mon composant est monté 
 
-  useEffect(() => getData(), []);
+  useEffect(() => getData(), []); 
 
   return (
     <div className="boxCards">
@@ -27,6 +27,7 @@ const Card = () => {
       {dataArticles.map((article) => (
         <div className="card" key={article.id}>
           <p className="title">{article.title}</p>
+          <div className="gradient"></div>
           {/* Chaque article à son id , je créer un lien vers une page avec la data de l'article séléctionné  */}
           <NavLink to={`/locationChoice/${article.id}`} key={article.id}>
             <img src={article.cover} alt={article.title} />
