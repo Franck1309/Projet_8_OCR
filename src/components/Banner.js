@@ -3,11 +3,12 @@ import React from "react";
 import { useLocation } from "react-router";
 
 const Banner = () => {
-  const location = useLocation(); 
+  const location = useLocation();
+  
   let imageUrl = "img/./paysage1.png";
   let textUrl = "Chez vous, partout et ailleurs";
 
-  if (location.pathname === "/about") {  
+  if (location.pathname === "/about") {
     imageUrl = "img/./paysage2.png";
     textUrl = "";
   }

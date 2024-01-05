@@ -17,7 +17,8 @@ const Card = () => {
       });
   };
 
-// j'appel getData une seule fois quand mon composant est appelé 
+// j'appel getData une seule fois quand mon composant est monté 
+
   useEffect(() => getData(), []);
 
   return (
