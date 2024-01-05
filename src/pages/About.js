@@ -23,7 +23,7 @@ const About = () => {
   return (
     <div className="main-content-about">
       <Navigation />
-      <Banner />
+      <Banner imageUrl="img/./paysage2.png"/>
       <div className="collapseAbout">
         {dataAbout.map((article, index) => (
           <Collapse key={index} title={article.title} text={article.text} />

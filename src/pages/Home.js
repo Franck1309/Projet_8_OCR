@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <div>
       <Navigation />
-      <Banner />
+      <Banner imageUrl="img/./paysage1.png" textUrl="Chez vous, partout et ailleurs"/>
       <Card />
       <Footer />
     </div>
