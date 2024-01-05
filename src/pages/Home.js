@@ -14,7 +14,8 @@ const Home = () => {
         imageUrl="img/./paysage1.png"
         textUrl="Chez vous, partout et ailleurs"
       />
-      {data.articles.map((article) => (
+      <div className="boxCards">
+        {data.articles.map((article) => (
         <Card
           cover={article.cover}
           title={article.title}
@@ -22,6 +23,8 @@ const Home = () => {
           key={article.id}
         />
       ))}
+      </div>
+      
       <Footer />
     </div>
   );
