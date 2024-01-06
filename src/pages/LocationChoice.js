@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate} from "react-router-dom";
 import Caroussel from "../components/Caroussel";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
@@ -10,6 +10,7 @@ import Collapse from "../components/Collapse";
 const LocationChoice = () => {
   const [selectedArticle, setSelectedArticle] = useState();
   const { articleId } = useParams();
+  const navigate = useNavigate();
 
   const getData = () => {
     axios
@@ -18,7 +19,7 @@ const LocationChoice = () => {
         setSelectedArticle(res.data);
       })
       .catch((error) => {
-        window.location.replace("/error");
+        navigate("/error");
         console.error(error);
       });
   };
