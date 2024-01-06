@@ -1,4 +1,5 @@
 .main-content-location {
+    
     .collapseLocationChoice {
     display: flex;
     flex-direction: row;
@@ -13,7 +14,7 @@
     }
     .containerCollapse {
         width: 47%;
-        
+
         @media (max-width: 500px){   
             margin: auto;
             width: 95%; 

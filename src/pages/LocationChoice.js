@@ -28,41 +28,42 @@ const LocationChoice = () => {
   }, [articleId]);
 
   return (
-    <div className="main-content-location">
-      <Navigation />
+    <div>
+      <div className="main-content-location">
+        <Navigation />
+        {selectedArticle && (
+          <div>
+            <Caroussel>
+              {selectedArticle.pictures.map((picture, index) => (
+                <img key={index} src={picture} alt="Photos du lieu" />
+              ))}
+            </Caroussel>
+            <InfoLocation info={selectedArticle} />
+            <div className="collapseLocationChoice">
+              <Collapse
+                article={selectedArticle}
+                title="Description"
+                text={selectedArticle.description}
+              />
 
-      {selectedArticle && (
-        <div>
-          <Caroussel>
-            {selectedArticle.pictures.map((picture, index) => (
-              <img key={index} src={picture} alt="Photos du lieu" />
-            ))}
-          </Caroussel>
-          
-          <InfoLocation info={selectedArticle} />
-
-          <div className="collapseLocationChoice">
-            <Collapse
-              article={selectedArticle}
-              title="Description"
-              text={selectedArticle.description}
-            />
-
-            <Collapse
-              article={selectedArticle}
-              title="Équipements"
-              text={
-                <ul>
-                  {selectedArticle.equipments.map((equipment, index) => (
-                    <li key={index}>{equipment}</li>
-                  ))}
-                </ul>
-              }
-            />
+              <Collapse
+                article={selectedArticle}
+                title="Équipements"
+                text={
+                  <ul>
+                    {selectedArticle.equipments.map((equipment, index) => (
+                      <li key={index}>{equipment}</li>
+                    ))}
+                  </ul>
+                }
+              />
+            </div>
           </div>
-        </div>
-      )}
-      <Footer />
+        )}
+      </div>
+      <div>
+        <Footer />
+      </div>
     </div>
   );
 };
