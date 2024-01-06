@@ -3,7 +3,6 @@ import Navigation from "../components/Navigation";
 import Card from "../components/Card";
 import Banner from "../components/Banner";
 import Footer from "../components/Footer";
-import axios from "axios";
 import data from "../assets/data.json";
 
 const Home = () => {

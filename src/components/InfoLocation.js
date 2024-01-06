@@ -1,11 +1,11 @@
 import React from "react";
+import Tag from "./Tag";
 // props info qui correspond à la data de chaque article
 const InfoLocation = ({ info }) => {
-  // fonction qui affiche des symboles étoile
+
   // prend en argument la note
   const renderStars = (rating) => {
     const stars = [];
-    // boucle for pour créer les 5 étoiles
     for (let i = 1; i <= 5; i++) {
       // Si index d'étoiles est inferieur ou égale à la note alors j'ajoute étoile pleine sinon étoile vide
       const starClass = i <= rating ? "fas fa-star" : "far fa-star";
@@ -19,13 +19,7 @@ const InfoLocation = ({ info }) => {
       <div className="infosLocation">
         <h1>{info.title}</h1>
         <p>{info.location}</p>
-        <div className="tags">
-          {info.tags.map((tag, index) => (
-            <span key={index} className="tag">
-              {tag}
-            </span>
-          ))}
-        </div>
+        <Tag tags={info.tags} />
       </div>
       <div className="divProprio">
         <div className="infosProprio">

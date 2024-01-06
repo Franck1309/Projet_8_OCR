@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 
 const Card = ({ cover, id, title }) => {
-  console.log(cover);
+
   return (
     <div>
       {/* Pour chaque article je creer une carte et un texte */}

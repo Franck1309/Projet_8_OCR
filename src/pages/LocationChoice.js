@@ -38,7 +38,7 @@ const LocationChoice = () => {
               <img key={index} src={picture} alt="Photos du lieu" />
             ))}
           </Caroussel>
-
+          
           <InfoLocation info={selectedArticle} />
 
           <div className="collapseLocationChoice">
